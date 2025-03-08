@@ -88,7 +88,6 @@ body:has(.dialog[open]) {
 .image-container {
   position: relative;
   border-block: 2px solid black;
-  block-size: calc();
 }
 
 .image {
@@ -194,11 +193,11 @@ body:has(.dialog[open]) {
 }
 
 .core {
-  transition: fill 0.3s linear;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .main-body {
-  transition: fill 0.3s linear 0.05s;
+  transition: fill 0.3s linear;
 }
 
 .sparks {
@@ -247,7 +246,7 @@ body:has(.dialog[open]) {
 }
 
 .like-icon .contour {
-  transition: fill 0.3s linear;
+  transition: fill 0.1s linear;
 }
 
 .like-icon.is-liked .core {
@@ -286,10 +285,8 @@ body:has(.dialog[open]) {
   transition-delay: 0.12s;
 }
 
-.card__like-button {
+.button {
   position: relative;
-  inline-size: 130px;
-  block-size: 38px;
   border: 2px solid black;
   display: flex;
   justify-content: center;
@@ -299,7 +296,7 @@ body:has(.dialog[open]) {
   overflow: hidden;
 }
 
-.card__like-button::before {
+.button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -313,8 +310,22 @@ body:has(.dialog[open]) {
   z-index: 0;
 }
 
-.card__like-button:hover::before {
+.button:hover::before {
   transform: scaleX(1);
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  border: 2px solid black;
+  box-shadow: 2px 2px 0 0 #000;
 }
 
 .button__text {
@@ -325,16 +336,6 @@ body:has(.dialog[open]) {
   mix-blend-mode: difference;
   position: relative;
   z-index: 1;
-}
-
-.card__like-button:focus {
-  border: none;
-  outline: none;
-}
-
-.card__like-button:focus-visible {
-  border: 2px solid black;
-  box-shadow: 2px 2px 0 0 #000;
 }
 
 .dialog-button {
@@ -353,32 +354,6 @@ body:has(.dialog[open]) {
   transition: box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-
-.dialog-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  block-size: 100%;
-  inline-size: 100%;
-  background-color: #000;
-  transform: scaleY(1) scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
-}
-
-.dialog-button:hover::before {
-  transform: scale(1);
-}
-
-.dialog-button:focus {
-  outline: none;
-}
-
-.dialog-button:focus-visible {
-  border: 2px solid #000;
-  box-shadow: 2px 2px 0 0 #000;
 }
 
 .dialog-button__floppy {
@@ -401,7 +376,7 @@ body:has(.dialog[open]) {
 }
 
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .dialog[open] {
@@ -423,14 +398,6 @@ body:has(.dialog[open]) {
   background-color: transparent;
   border: 2px solid #000;
   transition: box-shadow 0.3s ease;
-}
-
-.dialog__close-button:focus {
-  outline: none;
-}
-
-.dialog__close-button:focus-visible {
-  box-shadow: 2px 2px 0 0 #000;
 }
 
 @media (width <= 375px) {
