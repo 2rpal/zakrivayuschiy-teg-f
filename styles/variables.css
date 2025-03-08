@@ -1,1 +1,21 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --inter: 'inter', sans-serif;
+  --pressStart2P: 'PressStart2P', sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --text-stroke-color: #fff;
+  --dialog-button-direction: row;
+  --floppy-size: 21px;
+  --dialog-button-inline-size: 340px;
+  --dialog-button-block-size: 55px;
+  --bg-gradient: 
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, rgba(255, 255, 255, 0) 2px 4px), 
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, rgba(255, 255, 255, 0) 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+  --counter-color: #000;
+  --main-body-color: transparent;
+  --core-color: transparent;
+  --animation-fill-color: red;
+}
+
