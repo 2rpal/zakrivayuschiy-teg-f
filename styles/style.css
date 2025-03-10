@@ -194,7 +194,8 @@ body:has(.dialog[open]) {
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid black
+  outline: 2px solid black;
+  outline-offset: -2px;
 }
 
 .like-icon .heart {
